@@ -165,7 +165,7 @@ aarch64_toolchains("secure_aem_v8a_fvp_vhe") {
     plat_psci = "//src/arch/aarch64/plat/psci:spmc"
     plat_interrupts = "//src/arch/aarch64/plat/interrupts:gicv3"
     secure_world = "1"
-    pl011_base_address = "0x1c090000"
+    pl011_base_address = "0x1c090000"  #UART0 for SPMC
     smmu_base_address = "0x2b400000"
     smmu_memory_size = "0x100000"
     enable_mte = "1"
@@ -192,7 +192,7 @@ aarch64_toolchains("aem_v8a_fvp_vhe") {
   branch_protection = "standard"
   toolchain_args = {
     ffa_role = "//src/ffa:hypervisor"
-    pl011_base_address = "0x1c090000"
+    pl011_base_address = "0x1c0a0000" #UART1 for Hypervisor
     smmu_base_address = "0x2b400000"
     smmu_memory_size = "0x100000"
     plat_log_level = "LOG_LEVEL_INFO"
