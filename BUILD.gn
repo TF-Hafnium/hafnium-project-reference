@@ -81,7 +81,7 @@ group("test_root") {
 
 host_toolchain("host_fake") {
   use_platform = true
-  heap_pages = 60
+  heap_pages = 180
   max_cpus = 4
   max_vms = 6
 }
