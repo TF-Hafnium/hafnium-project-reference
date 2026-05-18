@@ -62,11 +62,11 @@ group("test_root") {
   testonly = true
 
   deps = [
-    "//src:unit_tests(:host_fake_clang)",
     "//test/arch(:aem_v8a_fvp_vhe_clang)",
     "//test/arch(:aem_v8a_fvp_vhe_ffa_v1_1_clang)",
     "//test/arch(:qemu_aarch64_vhe_clang)",
     "//test/arch(:rpi4_clang)",
+    "//test/unit_test:unit_tests(:host_fake_clang)",
     "//test/vmapi:partitions(:secure_aem_v8a_fvp_vhe_vm_clang)",
     "//test/vmapi(:aem_v8a_fvp_vhe_ffa_v1_1_vm_clang)",
     "//test/vmapi(:aem_v8a_fvp_vhe_vm_clang)",
