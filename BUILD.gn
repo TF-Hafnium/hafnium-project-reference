@@ -156,6 +156,11 @@ aarch64_toolchains("secure_aem_v8a_fvp_vhe") {
   max_cpus = 8
   max_vms = 16
   branch_protection = "standard"
+
+  # Configure the maximum (4-page / 16 KiB) RX/TX mailbox so the SPMC test
+  # suites exercise the dynamic-RXTX data path end-to-end, not just the
+  # default single-page configuration.
+  rxtx_max_page_count = 4
   toolchain_args = {
     ffa_role = "//src/ffa:spmc"
     plat_psci = "//src/arch/aarch64/plat/psci:spmc"
