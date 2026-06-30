@@ -168,6 +168,9 @@ aarch64_toolchains("secure_aem_v8a_fvp_vhe") {
     plat_log_level = "LOG_LEVEL_INFO"
     plat_num_virtual_interrupts_ids = 5120
     plat_partition_max_dma_devices = 1
+    plat_max_mem_shares = 128
+    plat_max_fragments = 32
+    plat_max_mem_share_recipients = 4
   }
 }
 
