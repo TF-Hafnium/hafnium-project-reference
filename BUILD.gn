@@ -195,6 +195,12 @@ aarch64_toolchains("aem_v8a_fvp_vhe") {
   max_cpus = 8
   max_vms = 16
   branch_protection = "standard"
+
+  # Match the maximum (4-page / 16 KiB) RX/TX mailbox enabled on
+  # secure_aem_v8a_fvp_vhe so a primary VM built for that SPMC (which
+  # advertises FFA_RXTX_MAP_MAX_BUF_PAGE_COUNT == 4 at compile time) can
+  # actually register a multi-page mailbox with this hypervisor at runtime.
+  rxtx_max_page_count = 4
   toolchain_args = {
     ffa_role = "//src/ffa:hypervisor"
     pl011_base_address = "0x1c0a0000"  #UART1 for Hypervisor
